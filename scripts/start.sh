@@ -45,8 +45,10 @@ docker network create $NETWORK
 docker run --rm --network=$NETWORK -d \
     --name $DB_CONTAINER $PORT_MAPPING $DB_IMAGE
 
+# Wait for things to become responsive
+docker exec $DB_CONTAINER db-wait.sh
+
 # Do the migrations
-docker run --rm --network=$NETWORK $MIGRATE_IMAGE -configFile=conf/flyway-annex.conf migrate
 docker run --rm --network=$NETWORK $MIGRATE_IMAGE
 
 trap - EXIT

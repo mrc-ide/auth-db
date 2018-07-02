@@ -1,5 +1,8 @@
 FROM postgres:9.6.2
 
+COPY bin /db-bin
+ENV PATH="/db-bin:$PATH"
+
 ENV POSTGRES_DB auth
 ENV POSTGRES_USER auth
 ENV POSTGRES_PASSWORD changeme
