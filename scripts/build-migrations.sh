@@ -8,7 +8,6 @@ NAME=auth-migrate
 TAG=$NAME
 COMMIT_TAG=$NAME:$GIT_ID
 BRANCH_TAG=$NAME:$GIT_BRANCH
-DB=montagu-db:$GIT_ID
 
 ## Get directory of the 'scripts/' directory
 DIR=$(dirname "$(readlink -f "$0")")
