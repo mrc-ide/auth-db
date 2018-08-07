@@ -53,3 +53,8 @@ PRIMARY KEY (user_group, role, scope_id)
 
 ALTER TABLE user_group_role ADD FOREIGN KEY (user_group) REFERENCES user_group (id);
 ALTER TABLE user_group_role ADD FOREIGN KEY (role) REFERENCES role (id);
+
+CREATE TABLE "onetime_token" (
+  "token" TEXT NOT NULL ,
+  PRIMARY KEY ("token")
+);
